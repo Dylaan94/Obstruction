@@ -1,9 +1,9 @@
 public class Main {
 
     public static void main (String[] args){
-        Board board = new Board(6,6);
+        Game game = new Game(6,6, "D", "B");
+        game.playGame();
 
-        System.out.println(board.getBoard());
     }
 
 }
