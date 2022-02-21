@@ -9,22 +9,22 @@ public class Game {
         board = new Board(height, width);
     }
 
-    public void playGame(){
+    public void playGame() {
         System.out.println(board.getBoard());
-
         Player player = player1;
-        while(!board.hasWon()) {
+        boolean success;
+        while (!board.hasWon()) {
             Move move = player.getMove();
-            board.placeToken(move.getRow()-1, move.getCol()-1, player.getInitial());
+            success = board.placeToken(move.getRow() - 1, move.getCol() - 1, player.getInitial());
             System.out.println(board.getBoard());
 
-            if (player.equals(player1)){
-                player = player2;
-            } else {
-                player = player1;
+            if (success){
+                if (player.equals(player1)) {
+                    player = player2;
+                } else {
+                    player = player1;
+                }
             }
         }
-
-
     }
 }

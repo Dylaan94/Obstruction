@@ -12,13 +12,6 @@ public class Player {
         input = new BufferedReader(new InputStreamReader(System.in));
     }
 
-    public void setPlayer() {
-        try {
-            this.initial = input.readLine();
-        } catch (IOException e) {
-
-        }
-    }
 
     public Move getMove() {
         String row = "";
@@ -36,7 +29,5 @@ public class Player {
     public String getInitial(){
         return initial;
     }
-
-
 
 }
